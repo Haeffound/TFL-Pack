@@ -188,8 +188,7 @@
 	    maxOverpassSpan: 150,
 	});
 	/// Surface-Level
-	window.SubwayBuilderAPI.trains.registerTrainType({
-	    id: 'Sstock',
+	window.SubwayBuilderAPI.trains.modifyTrainType('heavy-metro', {
 	    name: 'S Stock',
 	    description: '???. Exists in 7 and 8 cars configurations.',
 	    stats: {
@@ -228,7 +227,7 @@
         	stationMaintenanceCostPerYear: ,
         	tphLimit: 40,
 	    },
-	    compatibleTrackTypes: ['sstock'],
+	    compatibleTrackTypes: ['heavy-metro'],
 	    appearance: {color: '#', roofStyle: 'boxy', bodyColor: '#', couplerWidthMultiplier: 2 },
 	    portalCost: 10_000_000,
 	    rampCost: 4_000_000,
@@ -236,10 +235,9 @@
 	});
 	// LIGHT RAIL
 	/// DLR
-	window.SubwayBuilderAPI.trains.registerTrainType({
-	    id: 'dlrb??',
-	    name: 'DLR B??',
-	    description: 'A versatile tram-train designed to operate both on conventional railway and tramway sections. Fully low-floor, strong gradients and higher speed make it suitable for mixed urban and suburban routes.',
+	window.SubwayBuilderAPI.trains.modifyTrainType('light-metro', {
+	    name: 'DLR B07',
+	    description: '',
 	    stats: {
         	maxSpeed: 27.78,             // m/s (≈100 kph)
         	maxAcceleration: 1.1,
@@ -258,7 +256,7 @@
         	parallelTrackSpacing: 3.58,
         	trackClearance: 1.77,
         	minCars: 2,
-        	maxCars: 4,
+        	maxCars: 6,
         	carsPerCarSet: 2,
         	capacityPerCar: 200,
         	seatsPerCar: 195,
@@ -276,16 +274,16 @@
         	stationMaintenanceCostPerYear: 400_000,
         	tphLimit: 40,
 	    },
-	    compatibleTrackTypes: ['dlrb??', 'dlrb2k'],
-	    appearance: {color: '#', roofStyle: 'boxy', bodyColor: '#', couplerWidthMultiplier: 2 },
-	    portalCost: 10_000_000,
-	    rampCost: 4_000_000,
+	    compatibleTrackTypes: ['light-metro', 'dlrb23'],
+	    appearance: {color: '#', roofStyle: 'boxy'},
+	    portalCost: 6_000_000,
+	    rampCost: 3_000_000,
 	    maxOverpassSpan: 150,
 	});
 	window.SubwayBuilderAPI.trains.registerTrainType({
-	    id: 'citadis',
-	    name: 'Citadis X05',
-	    description: 'A modern tram designed for intensive urban operation. Its numerous doors and low-floor layout prioritize accessibility and rapid passenger exchange. Exists in different lengths for higher capacity corridors.',
+	    id: 'dlrb23',
+	    name: 'DLR B23',
+	    description: '',
 	    stats: {
         	maxSpeed: 19.44,             // m/s (≈70 kph)
         	maxAcceleration: 1.2,
@@ -322,8 +320,54 @@
         	stationMaintenanceCostPerYear: 40_000,
         	tphLimit: 30,
 	    },
-	    compatibleTrackTypes: ['citadis', 'tram'],
-	    appearance: {color: '#0055C8', roofStyle: 'rounded', bodyColor: '#BFC1BE', couplerWidthMultiplier: 2, catenary: true},
+	    compatibleTrackTypes: ['dlrb23', 'light-metro'],
+	    appearance: {color: '#', roofStyle: 'boxy', bodyColor: '#'},
+	    portalCost: 4_000_000,
+	    rampCost: 2_000_000,
+	    maxOverpassSpan: 150,
+	});
+	/// Croydon Tramlink
+	window.SubwayBuilderAPI.trains.modifyTrainType('light-rail', {
+	    name: 'CR 4000 Tram',
+	    description: '',
+	    stats: {
+        	maxSpeed: 19.44,             // m/s (≈70 kph)
+        	maxAcceleration: 1.2,
+        	maxDeceleration: 1.25,
+        	maxLateralAcceleration: 0.7,
+        	maxCantMm: 60,
+        	maxCantDeficiencyMm: 100,
+        	maxSlopePercentage: 6,
+        	maxSpeedLocalStation: 6.95,  // m/s (≈25 kph)
+        	crossoverSpeed: 6.95,        // m/s (≈25 kph)
+        	yardSpeedLimit: 6.95,        // m/s (≈25 kph)
+        	stopTimeSeconds: 20,
+        	turnaroundTimeSeconds: 60,
+        	minTurnRadius: 25,
+        	minStationTurnRadius: 35,
+        	parallelTrackSpacing: 3,
+        	trackClearance: 0.75,
+        	minCars: 5,
+        	maxCars: 7,
+        	carsPerCarSet: 1,
+        	capacityPerCar: 45,
+        	seatsPerCar: 12,
+        	doorsPerCarPerSide: 1,
+        	carLength: 6.3,
+        	trainWidth: 2.65,
+        	minStationLength: 36,
+        	maxStationLength: 50,
+        	carCost: 800_000,
+        	baseTrackCost: 18_000,
+        	baseStationCost: 12_000_000,
+        	trainOperationalCostPerHour: 160,
+        	carOperationalCostPerHour: 22,
+        	trackMaintenanceCostPerMeter: 150,
+        	stationMaintenanceCostPerYear: 40_000,
+        	tphLimit: 30,
+	    },
+	    compatibleTrackTypes: ['light-rail', 'tram'],
+	    appearance: {color: '#', roofStyle: 'rounded', bodyColor: '#BFC1BE', couplerWidthMultiplier: 2, catenary: true},
 	    portalCost: 4_000_000,
 	    rampCost: 2_000_000,
 	    maxOverpassSpan: 150,
@@ -337,8 +381,62 @@
 		minor: 30,
     	},
 	})
-	// Paris RER&TRANSILIEN
-	/// RER A
+	window.SubwayBuilderAPI.trains.modifyTrainType('tram', {
+	    name: 'Variobahn Tram',
+	    description: '',
+	    stats: {
+        	maxSpeed: 19.44,             // m/s (≈70 kph)
+        	maxAcceleration: 1.2,
+        	maxDeceleration: 1.25,
+        	maxLateralAcceleration: 0.7,
+        	maxCantMm: 60,
+        	maxCantDeficiencyMm: 100,
+        	maxSlopePercentage: 6,
+        	maxSpeedLocalStation: 6.95,  // m/s (≈25 kph)
+        	crossoverSpeed: 6.95,        // m/s (≈25 kph)
+        	yardSpeedLimit: 6.95,        // m/s (≈25 kph)
+        	stopTimeSeconds: 20,
+        	turnaroundTimeSeconds: 60,
+        	minTurnRadius: 25,
+        	minStationTurnRadius: 35,
+        	parallelTrackSpacing: 3,
+        	trackClearance: 0.75,
+        	minCars: 5,
+        	maxCars: 7,
+        	carsPerCarSet: 1,
+        	capacityPerCar: 45,
+        	seatsPerCar: 12,
+        	doorsPerCarPerSide: 1,
+        	carLength: 6.3,
+        	trainWidth: 2.65,
+        	minStationLength: 36,
+        	maxStationLength: 50,
+        	carCost: 800_000,
+        	baseTrackCost: 18_000,
+        	baseStationCost: 12_000_000,
+        	trainOperationalCostPerHour: 160,
+        	carOperationalCostPerHour: 22,
+        	trackMaintenanceCostPerMeter: 150,
+        	stationMaintenanceCostPerYear: 40_000,
+        	tphLimit: 30,
+	    },
+	    compatibleTrackTypes: ['tram', 'light-rail'],
+	    appearance: {color: '#', roofStyle: 'rounded', bodyColor: '#BFC1BE', couplerWidthMultiplier: 2, catenary: true},
+	    portalCost: 4_000_000,
+	    rampCost: 2_000_000,
+	    maxOverpassSpan: 150,
+	    allowGradeCrossing: true,
+	    gradeCrossingBaseCost: 100_000,
+	    gradeCrossingMaintenancePerDay: 1_000,
+	    gradeCrossingTphLimit: {
+		highway: null,
+		major: 20,
+		medium: 30,
+		minor: 30,
+    	},
+	})
+	// 
+	/// Thameslink
 	window.SubwayBuilderAPI.trains.registerTrainType({
 	    id: 'mi09',
 	    name: 'MI 09',
