@@ -1,0 +1,13 @@
+{
+    "id": "com.haeffound.idfmpack",
+    "name": "TfL Train Pack",
+    "description": "This pack contains various material for the London area. You will find:\nDeep Tube Stock (???), Surface-Level Tube (S-Stock)\nDLR, Trams\nTrains all the tracks (Aventra, Electrostar, Networker, Desiro UK, FLIRT UK, AT300, Pendolino, Javelin and Aurora)",
+    "version": "1.0.0",
+    "author": {
+        "name": "Haeffound"
+    },
+    "main": "index.js",
+    "dependencies": {
+        "subway-builder": ">=1.7.10"
+    }
+}
