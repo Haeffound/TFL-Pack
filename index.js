@@ -421,7 +421,7 @@
         	tphLimit: 30,
 	    },
 	    compatibleTrackTypes: ['tram', 'light-rail'],
-	    appearance: {color: '#', roofStyle: 'rounded', bodyColor: '#BFC1BE', couplerWidthMultiplier: 2, catenary: true},
+	    appearance: {color: '#', roofStyle: 'boxy', bodyColor: '#BFC1BE', couplerWidthMultiplier: 2, catenary: true},
 	    portalCost: 4_000_000,
 	    rampCost: 2_000_000,
 	    maxOverpassSpan: 150,
